@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
-<!-- 회원관리 페이지 -->
+<!-- 상품관리 페이지 -->
 
 <style>
 #menu_bar {
@@ -136,11 +136,12 @@
 </nav>
 <nav id="menu_bar" class="nav nav-pills flex-column py-3 text-center"
 	style="position: absolute; height: 100%;">
-	<a class="nav-link py-3" href="${cpath }/admin/order_manage.jsp">주문</a>
-	<a class="nav-link py-3" href="${cpath }/admin/product_manage.jsp">재고</a>
-	<a class="nav-link py-3" 
-		aria-current="page" href="${cpath }/admin/sales_manage.jsp">매출</a> <a
-		class="nav-link py-3  active" href="${cpath }/admin/user_manage.jsp" style="background-color: #FF8339;">회원</a> <a
+	<a class="nav-link py-3 active" href="${cpath }/admin/order_manage.jsp"
+		style="background-color: #FF8339;">주문</a> <a class="nav-link py-3"
+		href="${cpath }/admin/product_manage.jsp">재고</a> <a
+		class="nav-link py-3" aria-current="page"
+		href="${cpath }/admin/sales_manage.jsp">매출</a> <a
+		class="nav-link py-3" href="${cpath }/admin/user_manage.jsp">회원</a> <a
 		class="nav-link py-3" href="${cpath }/admin/seat_manage.jsp">좌석</a> <a
 		class="nav-link py-3" href="${cpath }/admin/ticket_manage.jsp">이용권</a>
 </nav>
@@ -149,11 +150,33 @@
 	<form class="d-flex">
 		<div class="mb-3 pe-2" style="width: 150px;">
 			<select class="form-select" aria-label="Default select example">
+				<option selected>가격</option>
+				<option value="1">현재재고</option>
+				<option value="2">금일 판매갯수</option>
+				<option value="3">평균 판매갯수</option>
+			</select>
+		</div>
+		<div class="mb-3 pe-2">
+			<input type="number" class="form-control" id="searchRangeOne">
+		</div>
+		<p class="h3">~</p>
+		<div class="mb-3 px-2">
+			<input type="number" class="form-control" id="searchRangeTwo">
+		</div>
+		<div>
+			<button type="submit" class="btn btn-secondary">검색</button>
+		</div>
+	</form>
+</div>
+<div class="container">
+	<form class="d-flex">
+		<div class="mb-3 pe-2" style="width: 150px;">
+			<select class="form-select" aria-label="Default select example">
 				<option selected>전체</option>
-				<option value="1">유저이름</option>
-				<option value="2">아이디</option>
-				<option value="3">휴대폰번호</option>
-				<option value="4">이메일</option>
+				<option value="1">전체</option>
+				<option value="2">상품번호</option>
+				<option value="3">상품명</option>
+				<option value="4">상품분류</option>
 			</select>
 		</div>
 		<div class="mb-3 pe-2">
@@ -169,16 +192,16 @@
 		<thead>
 			<tr class="table-dark text-center">
 				<th scope="col">#</th>
-				<th scope="col">유저고유번호</th>
-				<th scope="col">유저이름</th>
-				<th scope="col">유저아이디</th>
-				<th scope="col">유저남은시간</th>
-				<th scope="col">최근로그인시간</th>
-				<th scope="col">최근로그아웃시간</th>
-				<th scope="col">휴대폰번호</th>
-				<th scope="col">이메일</th>
-				<th scope="col">생년월일</th>
-				<th scope="col">유저삭제</th>
+				<th scope="col">상품번호</th>
+				<th scope="col">상품명</th>
+				<th scope="col">상품분류</th>
+				<th scope="col">가격</th>
+				<th scope="col">현재재고</th>
+				<th scope="col">금일 판매갯수</th>
+				<th scope="col">평균 판매갯수</th>
+				<th scope="col">소진 예상일</th>
+				<th scope="col">상세보기</th>
+				<th scope="col">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -197,7 +220,8 @@
 				<td class="pt-3">@mdo</td>
 				<td class="pt-3">Mark</td>
 				<td class="pt-3">Otto</td>
-				<td class="pt-3">1999-05-23</td>
+				<td><button type="button" class="btn btn-outline-warning"
+						disabled>조회</button></td>
 				<td><button type="button" class="btn btn-outline-danger"
 						disabled>삭제</button></td>
 			</tr>
@@ -216,7 +240,8 @@
 				<td class="pt-3">@mdo</td>
 				<td class="pt-3">Mark</td>
 				<td class="pt-3">Otto</td>
-				<td class="pt-3">1999-05-23</td>
+				<td><button type="button" class="btn btn-outline-warning"
+						data-bs-toggle="modal" data-bs-target="#myModal">조회</button></td>
 				<td><button type="button" class="btn btn-outline-danger">삭제</button></td>
 			</tr>
 		</tbody>

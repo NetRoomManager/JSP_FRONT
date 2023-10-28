@@ -2,9 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath }" />
+
+<!-- 이용권 구매 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,8 +16,9 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-#ticket_item:hover {
+.ticket_item:hover {
 	padding: 10px;
 	transition: 0.5s;
 }
@@ -34,7 +36,7 @@
 			</button>
 			<div class="d-flex text-light">
 				<div>
-					<h4>홍길동님</h4>
+					<h4>no.71</h4>
 				</div>
 			</div>
 		</div>
@@ -134,12 +136,12 @@
 	</div>
 
 	<div
-		class="w-100 bg-light container d-flex flex-wrap mt-3 mb-3 offcanvas offcanvas-bottom"
-		id="ticket" style="overflow-x: auto;">
-		<div class="text-lg-center mx-5" style="width: 300px;">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
-				id="ticket_item" style="background-color: #ffbb3f">
-				<div class="card-header text-dark">1시간 이용권</div>
+		class="w-100 bg-light container d-flex flex-wrap mt-3 mb-3 h-50 offcanvas offcanvas-bottom"
+		id="ticket" style="overflow-x: auto; margin: auto">
+		<div class="text-lg-center mx-5" style="width: 20%;">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+				style="background-color: #ffbb3f">
+				<div class="card-header text-dark">회원 1시간 이용권</div>
 				<div class="card-body text-danger">[1,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
@@ -147,11 +149,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-lg-center mx-5 view overlay zoom"
-			style="width: 300px">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
+
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div
+				class="card mt-3 mb-3 fw-bold border-black border-1  ticket_item"
 				style="background-color: #ffbb3f">
-				<div class="card-header text-dark">2시간 이용권</div>
+				<div class="card-header text-dark">회원 2시간 이용권</div>
 				<div class="card-body text-danger">[2,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
@@ -159,10 +162,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-lg-center mx-5" style="width: 300px">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
+
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
 				style="background-color: #ffbb3f">
-				<div class="card-header text-dark">3시간 이용권</div>
+				<div class="card-header text-dark">회원 3시간 이용권</div>
 				<div class="card-body text-danger">[3,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
@@ -170,10 +174,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-lg-center mx-5" style="width: 300px">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
 				style="background-color: #ffbb3f">
-				<div class="card-header text-dark">5시간 이용권</div>
+				<div class="card-header text-dark">회원 5시간 이용권</div>
 				<div class="card-body text-danger">[4,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
@@ -182,10 +186,10 @@
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 300px">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
 				style="background-color: #ffbb3f">
-				<div class="card-header text-dark">12시간이용권</div>
+				<div class="card-header text-dark">회원 10시간+1시간 이용권</div>
 				<div class="card-body text-danger">[10,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
@@ -193,11 +197,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-lg-center mx-5" style="width: 300px">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1"
+
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
 				style="background-color: #ffbb3f">
-				<div class="card-header text-dark">24시간이용권</div>
-				<div class="card-body text-danger">[15,000원]</div>
+				<div class="card-header text-dark">회원 20시간 + 3시간이용권</div>
+				<div class="card-body text-danger">[20,000원]</div>
+				<div class="card-footer">
+					<button class="btn btn-primary" type="button"
+						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+				style="background-color: #ffbb3f">
+				<div class="card-header text-dark">회원 50시간 + 10시간 이용권</div>
+				<div class="card-body text-danger">[50,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
 						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
@@ -205,8 +222,9 @@
 			</div>
 		</div>
 	</div>
+
 	<script>
-	  // 검색 이벤트 리스너
+		// 검색 이벤트 리스너
 		window.addEventListener("DOMContentLoaded", function() {
 			const searchInput = document.getElementById("name");
 			searchInput.addEventListener("keyup", function() {

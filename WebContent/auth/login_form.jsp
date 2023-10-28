@@ -2,11 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath }" />
+<!--로그인/회원가입 폼 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -28,7 +30,8 @@
 					href="${cpath }/auth/login_form.jsp">Auth</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${cpath }/customer/customer_main.jsp">customer</a></li>
-
+				<li class="nav-item"><a class="nav-link"
+					href="${cpath }/auth/cant_use_form.jsp">사용불가</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -42,12 +45,12 @@
 			<form action="" method="POST" class="w-25">
 				<div class="form-floating mb-3 mt-3">
 					<input type="text" class="form-control" id="username"
-						placeholder="Enter username" name="username" /> <label
+						placeholder="Enter username" name="username" required /> <label
 						for="username">유저아이디</label>
 				</div>
 				<div class="form-floating mt-3 mb-3">
 					<input type="password" class="form-control" id="users_password"
-						placeholder="Enter password" name="users_password" /> <label
+						placeholder="Enter password" name="users_password" required /> <label
 						for="users_password">Password</label>
 				</div>
 				<button type="submit" class="btn btn-success w-100 p-3 mt-3">
@@ -74,7 +77,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="modal" id="myModal">
+		<div class="modal fade" id="myModal" data-bs-backdrop="static"
+			data-bs-keyboard="false">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<!-- Modal Header -->
@@ -91,38 +95,46 @@
 							<form action="#">
 								<div class="form-floating mt-3 mb-3">
 									<input type="text" class="form-control" id="name"
-										placeholder="Enter name" name="name" /> <label for="name">이름</label>
+										placeholder="Enter name" name="name" required /> <label
+										for="name">이름</label>
 								</div>
 
 								<div class="form-floating mt-3 mb-3">
 									<input type="text" class="form-control" id="username"
-										placeholder="Enter username" name="username" \
-                                        />
-									<label for="username">아이디</label> <span class="text-danger">유효하지
-										않은 아이디입니다.</span> <span class="text-primary">사용가능한 아이디입니다.</span>
+										placeholder="Enter username" name="username" required />
+									<label for="username">아이디</label> <span class="text-danger"
+										id="invalid">유효하지 않은 아이디입니다.</span> <span class="text-primary"
+										id="valid">사용가능한 아이디입니다.</span>
 								</div>
 
 								<div class="form-floating mt-3 mb-3">
 									<input type="password" class="form-control" id="password"
-										placeholder="Enter password" name="password" /> <label
+										placeholder="Enter password" name="password" required /> <label
 										for="password">패스워드</label>
 								</div>
 
 								<div class="form-floating mt-3 mb-3">
 									<input type="date" class="form-control" id="birth"
-										placeholder="Enter birth" name="birth" /> <label for="birth">생년월일</label>
+										placeholder="Enter birth" name="birth" required /> <label
+										for="birth">생년월일</label>
 								</div>
 
 								<div class="form-floating mt-3 mb-3">
 									<input type="email" class="form-control" id="email"
-										placeholder="Enter username" name="email" /> <label
+										placeholder="Enter username" name="email" required /> <label
 										for="email">이메일</label>
 								</div>
 
 								<div class="form-floating mb-3 mt-3">
 									<input type="text" class="form-control" id="mobile"
-										placeholder="Enter mobile" value="010" name="mobile" /> <label
-										for="mobile">전화번호</label>
+										placeholder="Enter mobile" value="010" name="mobile" required />
+									<label for="mobile">전화번호</label>
+								</div>
+
+								<div class="form-floating mb-3 mt-3">
+									<input type="text" class="form-control" id="lol_nick"
+										placeholder="리그오브레전드 닉네임" name="lol_nick" /> <label
+										for="lol_nick">리그오브레전드 닉네임(선택)</label>
 								</div>
 
 								<button type="submit" class="btn btn-primary">회원가입</button>

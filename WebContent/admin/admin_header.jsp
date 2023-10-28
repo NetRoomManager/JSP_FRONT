@@ -10,6 +10,7 @@
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <meta charset="UTF-8">
 <title>관리자화면</title>
 <style type="text/css">
@@ -37,6 +38,8 @@ html {
 					href="${cpath }/admin/ticket_manage.jsp">이용권관리</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${cpath }/admin/user_manage.jsp">회원관리</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${cpath }/admin/order_manage.jsp">주문관리</a></li>
 			</ul>
 		</div>
 	</nav>
