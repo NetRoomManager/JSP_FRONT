@@ -66,11 +66,11 @@
 				<tr>
 					<div class="form-group mb-2 d-flex" id="1">
 						<td><input type="text" class="form-control " name="name"
-							id="name_1" value="신짱구" readonly></td>
+							id="name" value="신짱구" readonly></td>
 						<td><input type="date" class="form-control " name="birth"
-							id="birth_1" value="2003-03-04" readonly></td>
+							id="birth" value="2003-03-04" readonly></td>
 						<td><input type="email" class="form-control "
-							name="users_email" id="email_1" value="march03@naver.com"
+							name="users_email" id="email" value="march03@naver.com"
 							readonly></td>
 
 						<td><input type="button" class="btn btn-primary" value="선택하기"
@@ -81,30 +81,29 @@
 				<tr>
 					<div class="form-group mb-2 d-flex">
 						<td><input type="text" class="form-control " name="name"
-							id="name_4" value="홍길동" readonly></td>
+							id="name" value="홍길동" readonly></td>
 						<td><input type="date" class="form-control " name="birth"
-							id="birth_4" value="1999-04-12" readonly></td>
+							id="birth" value="1999-04-12" readonly></td>
 						<td><input type="email" class="form-control "
-							name="users_email" id="email_4" value="hong321@naver.com"
+							name="users_email" id="email" value="hong321@naver.com"
 							readonly></td>
 
 						<td><input type="button" class="btn btn-primary" value="선택하기"
-							readonly></td>
+							data-bs-toggle="offcanvas" data-bs-target="#ticket"></td>
 					</div>
 					</td>
 				</tr>
 				<tr>
 					<div class="form-group mb-2 d-flex">
 						<form>
-							<td><input type="text" class="form-control " id="name_31"
+							<td><input type="text" class="form-control " id="name"
 								value="김석국" readonly></td>
-							<td><input type="date" class="form-control " id="birth_31"
+							<td><input type="date" class="form-control " id="birth"
 								value="2007-12-03" readonly></td>
-							<td><input type="email" class="form-control " id="email_31"
+							<td><input type="email" class="form-control " id="email"
 								value="phycho321@naver.com" readonly></td>
 							<td><input type="button" class="btn btn-primary"
-								value="선택하기" readonly data-bs-toggle="modal"
-								data-bs-target="#myModal"></td>
+								value="선택하기" data-bs-toggle="offcanvas" data-bs-target="#ticket"></td>
 						</form>
 					</div>
 					</td>
@@ -113,24 +112,25 @@
 		</table>
 	</div>
 
-	<div class="offcanvas offcanvas-end" id="demo">
+
+	<div class="offcanvas offcanvas-end" id="payments">
 		<div class="offcanvas-header">
 			<h1 class="offcanvas-title">결제하기</h1>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
 		</div>
 		<div class="offcanvas-body d-flex flex-wrap">
 			<button class="btn">
-				<img class="img-fluid" src="../img/kakaopay.jpg" alt="New York"
+				<img class="btn_img_kakaopay img-fluid" src="../img/kakaopay.jpg" alt="kakaopay"
 					width="1100" height="500">
 			</button>
 			<button class="btn">
-				<img class="img-fluid w-100" src="../img/tosspay.png" alt="New York">
+				<img class="btn_img_tosspay img-fluid" src="../img/tosspay.png" alt="tosspay">
 			</button>
 			<button class="btn">
-				<img class="img-fluid" src="../img/naverpay.png" alt="New York"
+				<img class="btn_img_kgpay img-fluid" src="../img/KG_pay_button.png" alt="kgpay"
 					width="1100" height="500">
 			</button>
-			<button class="btn btn-secondary " data-bs-dismiss="offcanvas"
+			<button class=".btn_pay_cancle btn btn-secondary " data-bs-dismiss="offcanvas"
 				type="button">구매취소</button>
 		</div>
 	</div>
@@ -138,86 +138,87 @@
 	<div
 		class="w-100 bg-light container d-flex flex-wrap mt-3 mb-3 h-50 offcanvas offcanvas-bottom"
 		id="ticket" style="overflow-x: auto; margin: auto">
-		<div class="text-lg-center mx-5" style="width: 20%;">
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%;">
 			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 1시간 이용권</div>
 				<div class="card-body text-danger">[1,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 20%">
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
 			<div
-				class="card mt-3 mb-3 fw-bold border-black border-1  ticket_item"
+				class="card mt-3 mb-3 fw-bold border-black border-1 "
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 2시간 이용권</div>
 				<div class="card-body text-danger">[2,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 20%">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 3시간 이용권</div>
 				<div class="card-body text-danger">[3,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
-		<div class="text-lg-center mx-5" style="width: 20%">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+		
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 5시간 이용권</div>
 				<div class="card-body text-danger">[4,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 20%">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 10시간+1시간 이용권</div>
 				<div class="card-body text-danger">[10,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 20%">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 20시간 + 3시간이용권</div>
 				<div class="card-body text-danger">[20,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-lg-center mx-5" style="width: 20%">
-			<div class="card mt-3 mb-3 fw-bold border-black border-1 ticket_item"
+		<div class="ticket_item text-lg-center mx-5" style="width: 20%">
+			<div class="card mt-3 mb-3 fw-bold border-black border-1"
 				style="background-color: #ffbb3f">
 				<div class="card-header text-dark">회원 50시간 + 10시간 이용권</div>
 				<div class="card-body text-danger">[50,000원]</div>
 				<div class="card-footer">
 					<button class="btn btn-primary" type="button"
-						data-bs-toggle="offcanvas" data-bs-target="#demo">구매하기</button>
+						data-bs-toggle="offcanvas" data-bs-target="#payments">구매하기</button>
 				</div>
 			</div>
 		</div>

@@ -26,17 +26,17 @@
 <body>
     <div class="error-container">
         <h1 class="display-4">Oops!</h1>
-        <p class="lead">Something went wrong on our servers while we were processing your request. We're really sorry
+        <p class="err_message">Something went wrong on our servers while we were processing your request. We're really sorry
             about this, and will work hard to get this resolved as soon as possible.</p>
         <hr class="my-4">
-        <p>Status Code: <span class="text-danger">
+        <p>Status Code: <span class="err_status_code text-danger">
                 <%= response.getStatus() %>
             </span>
         </p>
 <%--         <p class="error-message">Exception: <%= exception.getMessage() %> --%>
         </p>
         <p>Please try again later or contact the administrator.</p>
-        <a class="btn btn-primary btn-lg" href="/" role="button">Go Home</a>
+        <a class="btn btn-primary btn-lg" href="${cpath }/" role="button">Go Home</a>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

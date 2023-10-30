@@ -16,9 +16,75 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <title>로그인</title>
+<style type="text/css">
+html {
+	font-family: "AppleSDGothicNeoR00", "Noto Sans KR", "맑은 고딕";
+}
+
+.hidden {
+	display: none;
+}
+
+@charset "utf-8";
+/* ---- reset ---- */
+body {
+	margin: 0;
+	font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+	display: block;
+	vertical-align: bottom;
+} /* ---- particles.js container ---- */
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #28455f;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+} /* ---- stats.js ---- */
+.count-particles {
+	background: #000022;
+	position: absolute;
+	top: 48px;
+	left: 0;
+	width: 80px;
+	color: #13E8E9;
+	font-size: .8em;
+	text-align: left;
+	text-indent: 4px;
+	line-height: 14px;
+	padding-bottom: 2px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+.js-count-particles {
+	font-size: 1.1em;
+}
+
+#stats, .count-particles {
+	-webkit-user-select: none;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+#stats {
+	border-radius: 3px 3px 0 0;
+	overflow: hidden;
+}
+
+.count-particles {
+	border-radius: 0 0 3px 3px;
+}
+</style>
 </head>
 <!-- 바디에 다크모드 -->
 <body data-bs-theme="dark">
+	<div id="particles-js" style="z-index: -1"></div>
 	<nav class="navbar navbar-expand-sm bg-info navbar-dark">
 		<div class="container-fluid">
 			<ul class="navbar-nav">
@@ -37,7 +103,7 @@
 	</nav>
 	<!-- 좌석이미지 -->
 	<div class="container"
-		style="background-image: url('../img/1422005677144.png'); background-size: 100%; background-repeat: no-repeat; background-position: center; width: auto; height: 550px;"></div>
+		style="background-image: url('../img/login_main.jpg'); background-size: 100%; background-repeat: no-repeat; background-position: center; width: auto; height: 500px; "></div>
 	<!-- 컨테이너 -->
 	<div class="container p-0">
 		<div class="d-flex w-100 mt-3" style="height: 350px">

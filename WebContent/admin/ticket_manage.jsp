@@ -16,7 +16,7 @@
 	padding-top: 15px;
 }
 </style>
-
+<title>이용권관리</title>
 <div id="headerContent"></div>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">

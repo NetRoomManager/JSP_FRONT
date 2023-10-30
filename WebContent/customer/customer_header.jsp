@@ -6,11 +6,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<link
-	href="../css/main.css" rel="stylesheet">
+<link href="../css/main.css" rel="stylesheet">
 
 
 <meta charset="UTF-8">
@@ -92,45 +92,11 @@ canvas {
 					href="${cpath }/customer/customer_main.jsp">유저 메인페이지</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${cpath }/customer/customer_order.jsp">유저 주문 페이지</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${cpath }/customer/error.jsp">에러페이지</a></li>
 			</ul>
 		</div>
 	</nav>
-	<!-- center choice button-->
-	<div class="container" style="]">
-		<div class="row mx-auto mt-1 mb-1" style="text-align: center;">
-			<div class="col-sm-3 text-white">
-				<a href="${cpath }/customer/customer_main.jsp"><button
-						class="btn btn-primary">메인 화면</button></a>
-			</div>
-
-			<div class="col-sm-3 text-white">
-				<a href="${cpath }/customer/customer_recharge.jsp"><button
-						class="btn btn-primary">요금제 충전</button></a>
-			</div>
-			<div class="col-sm-3 text-white">
-				<a href="${cpath }/customer/customer_order.jsp"><button
-						class="btn btn-primary">먹거리 주문</button></a>
-			</div>
-			<div class="col-sm-3 text-white">
-				<a><button id="close_btn" class="btn btn-primary"
-						, class="alert alert danger" data-bs-toggle="modal"
-						data-bs-target="#quit_modal">사용종료</button></a>
-			</div>
-
-			<!-- 모달 창 -->
-			<div class="modal fade" id="quit_modal" tabindex="-1" role="dialog"
-				aria-labelledby="quit_modalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-body">
-							<p>컴퓨터를 종료하시겠습니까?</p>
-							<p id="countdown">5</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- particles.js / 배경 -->
 	<script
@@ -246,7 +212,7 @@ canvas {
 			},
 			"retina_detect" : true
 		});
-		var count_particles, stats, update;
+		let count_particles, stats, update;
 		stats = new Stats;
 		stats.setMode(0);
 		stats.domElement.style.position = 'absolute';
@@ -291,17 +257,18 @@ canvas {
 					startCountdown(); // 카운트다운 시작
 				});
 	</script>
-	
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!-- 폰트어썸 -->
-    <script src="https://kit.fontawesome.com/a68b6c4b30.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/a68b6c4b30.js"
+		crossorigin="anonymous"></script>
 
-    <!-- Swiper JS / 이미지 넘기기-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- Swiper JS / 이미지 넘기기-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- particles.js / 배경 -->
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-   
+	<!-- particles.js / 배경 -->
+	<script
+		src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
