@@ -103,7 +103,6 @@
 .image-container2:hover .text-overlay2 {
 	opacity: 1;
 }
-
 </style>
 
 
@@ -119,10 +118,23 @@
 		</div>
 		<div class="header_btn">
 			<i class="fa-solid fa-power-off"></i> &nbsp;&nbsp;&nbsp;
-			<p>사용종료</p>
+			<p id="main_close_btn" data-bs-toggle="modal"
+				data-bs-target="#end_of_user">사용종료</p>
 		</div>
 	</div>
-</header>
+	<!-- 모달 창 -->
+<!-- 	<div class="modal fade" id="end_of_user" tabindex="-1" role="dialog" -->
+<!-- 		aria-labelledby="myModalLabel" aria-hidden="false"> -->
+<!-- 		<div class="modal-dialog" role="document"> -->
+<!-- 			<div class="modal-content"> -->
+<!-- 				<div class="modal-body"  style="text-align:center"> -->
+<!-- 					<p>컴퓨터를 종료하시겠습니까?</p> -->
+<!-- 					<p id="countdown">5</p> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </header> -->
 
 <!-- 시간정보 등등 -->
 <div class="info" style="z-index: 3">
@@ -140,9 +152,10 @@
 		</div>
 		<a href="#">자리이동</a> <a href="#"> <i class="fa-solid fa-power-off"
 			style="color: #ffffff;"></i> &nbsp;&nbsp;
-			<p class="p-0 mx-0 my-0">사용종료</p>
+			<p class="p-0 mx-0 my-0" id="main_close_btn">사용종료</p>
 		</a>
 	</div>
+	
 	<div class="username">
 		<p class="p-0 mx-0 my-0">
 			ID <span>geunuk</span>
@@ -182,8 +195,8 @@
 
 	</div>
 	<div class="service">
-		<a href="#">호출</a> <a onclick="openChatModal();" style="color:#eee;">메시지</a> <a href="#">주문 목록</a> <a
-			href="#">내 정보</a>
+		<a href="#">호출</a> <a onclick="openChatModal();" style="color: #eee;">메시지</a>
+		<a href="#">주문 목록</a> <a href="#">내 정보</a>
 	</div>
 
 	<!-- 게임메뉴 -->
@@ -217,38 +230,45 @@
 		<div class="advertisement">
 			<div class="main_advertisement">
 				<div class="logoRight">
-                        <!-- Carousel -->
-            <div id="main_ad" class="carousel slide" data-bs-ride="carousel">
+					<!-- Carousel -->
+					<div id="main_ad" class="carousel slide" data-bs-ride="carousel">
 
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                <button type="button" data-bs-target="#main_ad" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#main_ad" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#main_ad" data-bs-slide-to="2"></button>
-                </div>
+						<!-- Indicators/dots -->
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#main_ad"
+								data-bs-slide-to="0" class="active"></button>
+							<button type="button" data-bs-target="#main_ad"
+								data-bs-slide-to="1"></button>
+							<button type="button" data-bs-target="#main_ad"
+								data-bs-slide-to="2"></button>
+						</div>
 
 
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../img/pc방 광고.jpg" alt="logo1" class="d-block" style="width: 345px; height: 315px;">
-                </div>
-                <div class="carousel-item">
-                    <img src="../img/pc방 광고2.jpg" alt="logo2" class="d-block" style="width: 345px; height: 315px;">
-                </div>
-                </div>
+						<!-- The slideshow/carousel -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../img/pc방 광고.jpg" alt="logo1" class="d-block"
+									style="width: 345px; height: 315px;">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/pc방 광고2.jpg" alt="logo2" class="d-block"
+									style="width: 345px; height: 315px;">
+							</div>
+						</div>
 
-                
-                
-                <!-- Left and right controls/icons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#main_ad" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#main_ad" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-    </div>
+
+
+						<!-- Left and right controls/icons -->
+						<button class="carousel-control-prev" type="button"
+							data-bs-target="#main_ad" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</button>
+						<button class="carousel-control-next" type="button"
+							data-bs-target="#main_ad" data-bs-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</button>
+					</div>
+				</div>
 			</div>
 			<div class="sub_advertisement">
 				<img src="../img/nuguri.webp" alt="너굴맨"> <img
@@ -334,8 +354,8 @@
 <div id="main_chat_modal" class="main_chat_modal">
 	<div class="main_chat_modal_content rounded">
 		<span>관리자에게 보낼 메시지</span>
-		<h1 class="main_chat_modal_close" id="main_chat_modal_close" style="text-align: end;"
-			onclick="closeChatModal()">&times;</h1>
+		<h1 class="main_chat_modal_close" id="main_chat_modal_close"
+			style="text-align: end;" onclick="closeChatModal()">&times;</h1>
 
 		<!-- 채팅 인터페이스 -->
 		<div id="chat_box"
@@ -388,10 +408,36 @@
 		        modal.style.display = 'none';
 		    }
 
+		    
             // 자리이동 눌렸을 때, 알림창 만들기  
-            document.getElementById('changeBtn').addEventListener('click', function () {
+            document.getElementById('').addEventListener('click', function () {
                 alert('원하는 좌석에서 로그인하세요!')
             });
+            
+//             document.getElementById('main_close_btn').addEventListener('click', function () {
+//                 var countdownElement = document.getElementById('countdown');
+//                 var countdownValue = 5; // 5초 카운트다운
+
+//                 // 카운트다운 함수
+//                 function startCountdown() {
+//                     countdownElement.textContent = countdownValue;
+//                     countdownValue--;
+
+//                     if (countdownValue < -1) {
+//                         // 시간이 다 되면 모달을 닫고 메시지 표시
+//                         $('#end_of_user').modal('hide');
+//                         alert('컴퓨터가 종료됩니다.');
+//                     } else if (countdownValue === -1) {
+//                     	// 로그인폼으로
+//                         location.href = "${cpath}/auth/loginForm.jsp";
+//                     }
+//                     else {
+//                         setTimeout(startCountdown, 1000);
+//                     }
+//                 }
+
+//                 startCountdown(); // 카운트다운 시작
+//             });
         </script>
 <!-- javaScript -->
 <script src="../js/script.js"></script>
